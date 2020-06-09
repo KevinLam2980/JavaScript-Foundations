@@ -5,10 +5,10 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-const P = 200000;
-const I = 0.05;
-const years = 30;
-const name = "Kevin";
+// const P = 200000;
+// const I = 0.05;
+// const years = 30;
+// const name = "Kevin";
 
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
@@ -17,8 +17,8 @@ const name = "Kevin";
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
-const monthlyInterestRate = I / 12;
-const N = years * 12;
+// const monthlyInterestRate = I / 12;
+// const N = years * 12;
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers. Save the final value into a variable called monthlyRate. 
@@ -134,26 +134,26 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 
-function variableInterestRate(P, I, years){
-    I = I - 0.02;
-    for(let i = 0; i < 10; i++){
+// function variableInterestRate(P, I, years){
+//     I = I - 0.02;
+//     for(let i = 0; i < 10; i++){
 
 
     
-        const monthlyInterestRate = I / 12;
-        let N = years * 12;
-        const n1 = Math.pow((1 + monthlyInterestRate),N);
-        const numerator = n1 * monthlyInterestRate;
-        const denominator = n1 - 1;
-        const monthlyRate = P * (numerator / denominator);
+//         const monthlyInterestRate = I / 12;
+//         let N = years * 12;
+//         const n1 = Math.pow((1 + monthlyInterestRate),N);
+//         const numerator = n1 * monthlyInterestRate;
+//         const denominator = n1 - 1;
+//         const monthlyRate = P * (numerator / denominator);
 
         
-        console.log(name + ", with an interest rate of " + I.toFixed(3) + ", your monthly rate is $" + monthlyRate.toFixed(2));
-        I = I + 0.005;
-    }
-}
+//         console.log(name + ", with an interest rate of " + I.toFixed(3) + ", your monthly rate is $" + monthlyRate.toFixed(2));
+//         I = I + 0.005;
+//     }
+// }
 
-console.log(variableInterestRate(200000, 0.04, 30));
+// console.log(variableInterestRate(200000, 0.04, 30));
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
@@ -167,5 +167,48 @@ console.log(variableInterestRate(200000, 0.04, 30));
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
+let P = prompt("Enter P");
+let I = prompt("Enter I");
+let years = prompt("Enter years");
+let name = prompt("Enter your name");
+
+// function mortgageCalculator(P, I, years){
+    const monthlyInterestRate = I / 12;
+    let N = years * 12;
+    const n1 = Math.pow((1 + monthlyInterestRate),N);
+    const numerator = n1 * monthlyInterestRate;
+    const denominator = n1 - 1;
+    const monthlyRate = P * (numerator / denominator);
+    console.log(name + ", your monthly rate is $" + monthlyRate.toFixed(2));
+// }
+
+// mortgageCalculator(P, I, years);
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
+
+// rates = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7];
+
+// function variableInterestRate(P, rates, years){
+
+//     for(let i = 0; i < rates.length; i++){
+
+
+    
+//         const monthlyInterestRate = rates[i] / 12;
+//         let N = years * 12;
+//         const n1 = Math.pow((1 + monthlyInterestRate),N);
+//         const numerator = n1 * monthlyInterestRate;
+//         const denominator = n1 - 1;
+//         const monthlyRate = P * (numerator / denominator);
+
+        
+//         console.log(name + ", with an interest rate of " + rates[i] + ", your monthly rate is $" + monthlyRate.toFixed(2));
+        
+//     }
+// }
+
+// console.log(variableInterestRate(200000, rates, 30));
+
+
+
