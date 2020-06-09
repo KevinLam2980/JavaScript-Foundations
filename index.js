@@ -95,24 +95,24 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 */
 
 
-function mortgageCalculator(P, I, years, credit){
-    if(credit > 740){
-        I = I * 0.95;
-    } else if (credit < 660){
-        I = I * 1.95;
-    } else {
-        I = I * 1;
-    }
-    const monthlyInterestRate = I / 12;
-    let N = years * 12;
-    const n1 = Math.pow((1 + monthlyInterestRate),N);
-    const numerator = n1 * monthlyInterestRate;
-    const denominator = n1 - 1;
-    const monthlyRate = P * (numerator / denominator);
-    console.log(name + ", your monthly rate is $" + monthlyRate.toFixed(2));
-}
+// function mortgageCalculator(P, I, years, credit){
+//     if(credit > 740){
+//         I = I * 0.95;
+//     } else if (credit < 660){
+//         I = I * 1.95;
+//     } else {
+//         I = I * 1;
+//     }
+//     const monthlyInterestRate = I / 12;
+//     let N = years * 12;
+//     const n1 = Math.pow((1 + monthlyInterestRate),N);
+//     const numerator = n1 * monthlyInterestRate;
+//     const denominator = n1 - 1;
+//     const monthlyRate = P * (numerator / denominator);
+//     console.log(name + ", your monthly rate is $" + monthlyRate.toFixed(2));
+// }
 
-mortgageCalculator(200000, 0.05, 30, 500);
+// mortgageCalculator(200000, 0.05, 30);
 
 
 
@@ -134,6 +134,26 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 
+function variableInterestRate(P, I, years){
+    I = I - 0.02;
+    for(let i = 0; i < 10; i++){
+
+
+    
+        const monthlyInterestRate = I / 12;
+        let N = years * 12;
+        const n1 = Math.pow((1 + monthlyInterestRate),N);
+        const numerator = n1 * monthlyInterestRate;
+        const denominator = n1 - 1;
+        const monthlyRate = P * (numerator / denominator);
+
+        
+        console.log(name + ", with an interest rate of " + I.toFixed(3) + ", your monthly rate is $" + monthlyRate.toFixed(2));
+        I = I + 0.005;
+    }
+}
+
+console.log(variableInterestRate(200000, 0.04, 30));
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
